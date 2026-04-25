@@ -1,7 +1,16 @@
+import sys
+from pathlib import Path
+
+# Allow `streamlit run src/btf/ui.py` to work even when the package isn't
+# installed: ensure `src/` is on sys.path so `import btf` resolves.
+_SRC_DIR = Path(__file__).resolve().parent.parent
+if str(_SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(_SRC_DIR))
+
 import streamlit as st
 
-from catalog import CATALOG
-from pricing import get_bttf_reduction_rate, get_total_price
+from btf.catalog import CATALOG
+from btf.pricing import get_bttf_reduction_rate, get_total_price
 
 st.set_page_config(
     page_title="DVD Cart — Back to the Future",

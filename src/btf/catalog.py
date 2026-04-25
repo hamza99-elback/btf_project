@@ -1,4 +1,4 @@
-from models import BttfFilm, Film, OtherFilm
+from .models import BttfFilm, Film, OtherFilm
 
 CATALOG: dict[str, Film] = {
     "Back to the Future 1": BttfFilm(name="Back to the Future 1", volume=1),

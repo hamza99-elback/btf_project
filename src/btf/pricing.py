@@ -1,4 +1,5 @@
-from models import Film
+from .models import Film
+
 
 def get_bttf_reduction_rate(films_list: list[Film]) -> float:
     """
@@ -18,7 +19,7 @@ def get_bttf_reduction_rate(films_list: list[Film]) -> float:
         return 0.20  # 20% reduction for 3 different films
     else:
         return 0.0   # No reduction for less than 2 different films
-    
+
 
 def get_total_price(films_list: list[Film]) -> float:
     """
@@ -34,8 +35,7 @@ def get_total_price(films_list: list[Film]) -> float:
 
     bttf_reduction_rate = get_bttf_reduction_rate(bttf)
     total_others_price = sum(film.price for film in others)
-    total_bttf_price = sum(film.price for film in bttf)* (1 - bttf_reduction_rate)
-
+    total_bttf_price = sum(film.price for film in bttf) * (1 - bttf_reduction_rate)
 
     total_price = total_others_price + total_bttf_price
     return total_price
