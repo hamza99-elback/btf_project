@@ -9,7 +9,7 @@ btf_project/
 ├── pyproject.toml              # packaging, deps, pytest/ruff/mypy/coverage config
 ├── requirements.txt            # mirror of pyproject deps for `pip install -r` users
 ├── README.md
-├── .github/workflows/ci.yml    # lint + type-check + tests on 3.11 & 3.12
+├── .github/workflows/ci.yml    # tests on 3.11
 ├── src/
 │   └── btf/                    # the package
 │       ├── __init__.py
